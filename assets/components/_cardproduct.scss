@@ -1,0 +1,59 @@
+.card {
+    &-product {
+        position: relative;
+        border: none;
+        border-radius: 1rem;
+        background: $c-light;
+        transition: all .3s ease-in-out;
+        &:hover {
+            box-shadow: 2px 12px 29px 0px rgba(0,0,0,0.21);
+        }
+    }
+    &-hero {
+        overflow: hidden;
+        border-radius: 1rem 1rem 0 0;
+        @include media-to(mid) {
+            height: 10rem;
+        }
+    }
+    &-img {
+        min-width: 100%;
+        transition: all .3s ease-in-out;
+        &:hover {
+        transform: scale(1.1)
+        }
+    }
+    &-info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 220px;
+    }
+    &-title {
+        font-size: 1.4rem;
+        margin: 0 0 1rem 0;
+    }
+    &-price {
+        font-size: 1.1rem;
+        margin: .5rem 0 0 0;
+        color: $c-accent;
+        font-weight: bold;
+        padding: 0 1rem;
+    }
+    &-starts {
+        align-items: center;
+    }
+    &-actions {
+        &-button {
+            box-shadow: none;
+            background: $c-positive;
+            padding: .8rem 1.5rem;
+            font-size: 1rem;
+            @include media-to(small) {
+                padding: .6rem .9rem;
+            }
+            margin-left: .5rem;
+        }
+    }
+}

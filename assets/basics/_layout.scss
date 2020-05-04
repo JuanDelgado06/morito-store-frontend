@@ -1,0 +1,44 @@
+.grid-3 {
+    display: grid;
+    grid-gap: 1rem;
+    margin: 1rem 0;
+    @include media-to(small) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-to(mid) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+}
+.grid-2 {
+    display: grid;
+    grid-gap: 1rem;
+    @include media-to(little) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+//Flex Navigation
+.flex-between {
+    width: 90%;
+    @include media-to(small) {
+        width: 80%;
+        max-width: 900px;
+    }
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+//  Layout de Formulario de Productose
+.el-form-layout {
+    display: grid;
+    @include media-to(mid) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+}
+//Flex comunes
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}

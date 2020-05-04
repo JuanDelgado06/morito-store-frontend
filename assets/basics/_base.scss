@@ -1,0 +1,29 @@
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s;
+}
+.page-enter, .page-leave-to {
+    opacity: 0;
+}
+
+/* Estilos base */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    background: $c-default;
+}
+.container {
+    max-width: 900px;
+    width: 95%;
+    margin: 0 auto;
+}
+img {
+    width: 100%;
+    max-width: 100%;
+}
