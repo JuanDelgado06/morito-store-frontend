@@ -51,7 +51,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: development ? ' http://localhost:3001/api' : 'https://amazon-clone-api.now.sh/api'
+    baseURL: development ? ' http://localhost:3001/api' : 'https://morito-store-api.now.sh/api'
   },
   /*
   ** Build configuration
