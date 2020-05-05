@@ -36,10 +36,6 @@ import { Component, mixins } from 'nuxt-property-decorator'
             this.category = this.product.category;
             this.owner = this.product.owner;
         }
-        onFileSelected(res: any, file: object | any) {
-            this.selectFile = file.raw;//URL.createObjectURL
-            this.photo_products.push(file.raw)
-        }
         async updateProduct() {
             try {
                 let data: any;
@@ -69,15 +65,5 @@ import { Component, mixins } from 'nuxt-property-decorator'
             } catch (e) {
                 console.log(e);
             }
-        }
-        handleExceed(files : [], fileList: Array<object>) {
-            this.$message.warning(`El limite es 3 images, haz seleccionado ${files.length} archivos, añade hasta ${(files.length + fileList.length) - 1} images`);
-        }
-        handleRemove(file : string, fileList: string[]) : void {
-            console.log(file, fileList);
-        }
-        handlePictureCardPreview(file : string | any) : any {
-            this.dialogImageUrl = file.url;
-            this.dialogVisible = true;
         }
     }
