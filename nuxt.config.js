@@ -51,7 +51,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: development ? ' https://morito-store-api.now.sh/api' : 'https://morito-store-api.now.sh/api'
+    proxy: development ? false : true,
+    baseURL: development ? ' http://localhost:3003/api' : 'https://morito-store-api.now.sh/api'
   },
   /*
   ** Build configuration
