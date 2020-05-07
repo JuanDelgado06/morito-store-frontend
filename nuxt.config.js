@@ -45,13 +45,18 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/auth'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
     baseURL: development ? ' http://localhost:3003/api' : 'https://morito-store-api.now.sh/api'
+  },
+  proxy: {
+    "api/" : development ? ' http://localhost:3003/api' : 'https://morito-store-api.now.sh/api'
   },
   /*
   ** Build configuration
@@ -67,7 +72,19 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+   extend (config, ctx) {
+  }
+},
+auth: {
+  strategies: {
+    local: {
+      endpoints: {
+        login: {
+          propertyName: "token"
+        },
+        logout: true
+      }
     }
   }
+}
 }
