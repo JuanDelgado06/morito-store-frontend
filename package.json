@@ -15,6 +15,7 @@
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "@types/nuxtjs__auth": "^4.8.4",
     "element-ui": "^2.4.11",
     "marked": "^1.0.0",
     "node-sass": "^4.13.1",

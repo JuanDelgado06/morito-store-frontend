@@ -5,7 +5,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
     //AsyncData
         public async asyncData({$axios} : any) {
             try {
-                const {data} = await $axios.$get('owners');
+                const {data} = await $axios.$get('/api/owners');
                 return { owners : data }
             } catch (e) {
                 console.log(e);
@@ -28,7 +28,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
                 data.append("about", this.about);
                 data.append("photo", this.photo);
 
-                await this.$axios.$post('owners', data);
+                await this.$axios.$post('/api/owners', data);
                 this.$router.push('/');
             } catch (e) {
                 console.log(e);

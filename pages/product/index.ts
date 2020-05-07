@@ -6,8 +6,8 @@ import { Component, mixins } from 'nuxt-property-decorator'
     //asyncData
         async asyncData({$axios} : any) {
             try {
-                const categoriesPromise : Promise<object> = $axios.$get('categories');
-                const ownersPromise : Promise<object> = $axios.$get('owners');
+                const categoriesPromise : Promise<object> = $axios.$get('/api/categories');
+                const ownersPromise : Promise<object> = $axios.$get('/api/owners');
 
                 const promises: Array<object | any> = [categoriesPromise, ownersPromise];
                 //Utilizamos Promise.all porque necesitamos que las dos promesas se ejecuten al mismo tiempo
@@ -38,7 +38,7 @@ import { Component, mixins } from 'nuxt-property-decorator'
                     data.append("photo_products", image)
                 })
 
-                const result = await this.$axios.$post('products', data)
+                const result = await this.$axios.$post('/api/products', data)
                 this.$router.push('/');
             } catch (e) {
                 console.log(e);

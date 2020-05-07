@@ -6,9 +6,9 @@ import { Component, mixins } from 'nuxt-property-decorator'
     //asyncData
         async asyncData({$axios, params} : any) {
             try {
-                const categoriesPromise : Promise<object> = $axios.$get('categories');
-                const ownersPromise : Promise<object> = $axios.$get('owners');
-                const productPromise : Promise<object> = $axios.$get(`products/${params.id}`);
+                const categoriesPromise : Promise<object> = $axios.$get('/api/categories');
+                const ownersPromise : Promise<object> = $axios.$get('/api/owners');
+                const productPromise : Promise<object> = $axios.$get(`/api/products/${params.id}`);
 
                 const promises: Array<object | any> = [categoriesPromise, ownersPromise, productPromise];
                 //Utilizamos Promise.all porque necesitamos que las dos promesas se ejecuten al mismo tiempo
@@ -60,7 +60,7 @@ import { Component, mixins } from 'nuxt-property-decorator'
                         owner : this.owner
                     }
                 }
-                await this.$axios.$put(`products/${this.$route.params.id}`, data)
+                await this.$axios.$put(`/api/products/${this.$route.params.id}`, data)
                 this.$router.push('/');
             } catch (e) {
                 console.log(e);

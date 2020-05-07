@@ -15,7 +15,7 @@ export default class SignUp extends Vue {
                 password: this.password
             }
 
-            let res = await this.$axios.$post("/auth/signup", data);
+            let res = await this.$axios.$post("/api/auth/signup", data);
 
             console.log(res);
             if(res.success) {

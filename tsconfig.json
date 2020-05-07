@@ -28,6 +28,7 @@
       "@types/node",
       "@nuxt/types", 
       "@nuxtjs/axios",
+      "@types/nuxtjs__auth"
     ]
   },
   "exclude": [

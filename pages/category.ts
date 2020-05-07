@@ -4,7 +4,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
     //asyncData
         async asyncData({$axios} : any) {
             try {
-                const {data} = await $axios.$get('categories');
+                const {data} = await $axios.$get('/api/categories');
                 return { categories : data }
             } catch (e) {
                 throw new Error(`Ojito Error => ${e}`)
@@ -21,7 +21,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
                 let tipo: string = `${tipoM}${tipoL}`;
 
                 const data = {type : tipo}
-                const result = await this.$axios.$post('categories', data);
+                const result = await this.$axios.$post('/api/categories', data);
                 this.$router.push('/category')
             } catch (e) {
                 let message: string = e.message;

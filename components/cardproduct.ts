@@ -37,7 +37,7 @@ export default class CardProduct  extends Vue {
                         text: 'Eliminando',
                         background: 'rgba(0, 0, 0, 0.7)'
                     });
-                    await this.$axios.$delete(`products/${productID}`)
+                    await this.$axios.$delete(`/api/products/${productID}`)
                     loading.close();
                     this.$notify({
                         title: 'Eliminado',
