@@ -1,6 +1,9 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 
-@Component
+@Component({
+    middleware: "auth",
+    auth: "guest"
+})
 export default class SignUp extends Vue {
     //Data
     name: string = '';
@@ -17,13 +20,12 @@ export default class SignUp extends Vue {
 
             let res = await this.$axios.$post("/api/auth/signup", data);
 
-            console.log(res);
+            // console.log(res);
             if(res.success) {
                 let resAuth = await this.$auth.loginWith("local", { data: {
                     email: this.email,
                     password: this.password
                 } })
-                console.log("respuesta", resAuth);
 
                 this.$router.push("/");
             }

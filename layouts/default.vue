@@ -12,7 +12,13 @@
             <h1 class="header-title">Morito Store</h1>
           </div>
         </nuxt-link>
-        <drawer class="header-icon" />
+        <div class="nav">
+          <div class="nav-actions nav-item" v-if="!this.$auth.user">
+            <nuxt-link to="/login">Iniciar Sessión</nuxt-link>
+            <nuxt-link to="/signup">Registraté</nuxt-link>
+          </div>
+          <drawer class="header-icon" />
+        </div>
       </div>
     </header>
     <nuxt />
@@ -39,36 +45,25 @@ export default class Index extends Vue {}
 .header {
     padding: .5rem 0;
     background: $c-secondary;
+    color: $c-light;
+    a {
+      color: $c-light;
+    }
     &-title {
         margin: 0;
         padding: 0;
         color: $c-light;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         @include media-to(little) {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
     }
-    &-icon {
-        margin-top: -.5rem;
-    }
 }
-.svg-icon {
-  width: 2em;
-  height: 2rem;
-  margin: 0 .2rem 0 0;
-  @include media-to(little) {
-    width: 2.5em;
-    height: 2.5em;
-    margin: 0 .5rem 0 0;
+.nav {
+  display: flex;
+  align-items: center;
+  &-item {
+    margin-right: 1.2rem;
   }
-}
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-  fill: $c-positive;
-}
-.svg-icon circle {
-  stroke: #4691f6;
-  stroke-width: 1;
 }
 </style>
