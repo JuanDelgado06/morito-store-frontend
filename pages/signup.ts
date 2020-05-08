@@ -22,7 +22,7 @@ export default class SignUp extends Vue {
 
             // console.log(res);
             if(res.success) {
-                let resAuth = await this.$auth.loginWith("local", { data: {
+                await this.$auth.loginWith("local", { data: {
                     email: this.email,
                     password: this.password
                 } })

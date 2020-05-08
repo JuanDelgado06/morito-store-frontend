@@ -1,7 +1,9 @@
 import dataFormMixins from '@/mixins/product-form-mixin'
 import { Component, mixins } from 'nuxt-property-decorator'
 
-    @Component
+    @Component({
+        // middleware: ["auth", "admin"]
+    })
     export default class Product extends mixins(dataFormMixins) {
     //asyncData
         async asyncData({$axios, params} : any) {
